@@ -5,23 +5,21 @@ pipeline {
     environment {
         MAVEN_PATH="/usr/share/maven/bin:${MAVEN_PATH}"
        // BRANCH_NAME="${env.BRANCH_NAME}"
+       def branch = env.BRANCH_NAME
     }
     
     stages {
         
         stage ('checkout') {
             steps {
-                script {
-                    checkout scm
-                }
-               // git branch: "env.BRANCH_NAME", url: 'https://github.com/sarimheyat/simple-java-maven-app.git'
+                git branch: "env.BRANCH_NAME", url: 'https://github.com/sarimheyat/simple-java-maven-app.git'
             }
         }
 
     
     stage ('Build') {
         steps {
-            
+            sh 'echo $BRANCH_NAME'
             sh 'mvn clean install -DskipTests -B -U -T 5'
         }
     }
