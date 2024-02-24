@@ -11,7 +11,10 @@ pipeline {
         
         stage ('checkout') {
             steps {
-                git branch: "env.BRANCH_NAME", url: 'https://github.com/sarimheyat/simple-java-maven-app.git'
+                script {
+                    checkout scm
+                }
+               // git branch: "env.BRANCH_NAME", url: 'https://github.com/sarimheyat/simple-java-maven-app.git'
             }
         }
 
