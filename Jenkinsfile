@@ -4,7 +4,7 @@ pipeline {
     
     environment {
         MAVEN_PATH="/usr/share/maven/bin:${MAVEN_PATH}"
-       // BRANCH_NAME="${env.BRANCH_NAME}"
+        BRANCH_NAME="${env.BRANCH_NAME}"
        //def branch = env.BRANCH_NAME
     }
     
