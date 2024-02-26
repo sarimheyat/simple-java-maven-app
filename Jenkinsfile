@@ -12,7 +12,7 @@ pipeline {
         
         stage ('checkout') {
             steps {
-                git branch:'${BRANCH_NAME}', url: 'https://github.com/sarimheyat/simple-java-maven-app.git'
+                git branch:'master', url: 'https://github.com/sarimheyat/simple-java-maven-app.git'
             }
         }
 
